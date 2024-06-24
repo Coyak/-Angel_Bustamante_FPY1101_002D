@@ -1,4 +1,4 @@
-import libros.txt as txt
+
 Libros=[]
 
 def agregarlibros():
@@ -41,7 +41,9 @@ def vertodoslibros():
             print()
 
 def modificarlibros():
-    with open(f"libros.txt", 'w',newline='',encoding='Utf-8') as guardalibros:
+    with open(f"libros.txt", 'a',newline='',encoding='Utf-8'):
+        guardalibros.write(f"Libro: {Libros['libro']}, Autor: {Libros['autor']}, Año:{Libros['año']}, Genero:{Libros['genero']}\n")
+        guardalibros.close()
 
 
 def eliminarlibros():
@@ -63,4 +65,4 @@ def Guardarlibros():
 
 with open(f"libros.txt", 'a',newline='',encoding='Utf-8') as guardalibros:
     for libros in Libros:
-    file.write(newline='',encoding='Utf-8') 
+     guardalibros.write(f"Libro: {Libros['libro']}, Autor: {Libros['autor']}, Año:{Libros['año']}, Genero:{Libros['genero']}\n")
